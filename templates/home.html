@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+<header>
+    <a href="{% url 'register_page' %}">Register</a> |
+    <a href="{% url 'home' %}">Home</a> |
+    <a href="{% url 'login' %}">Log In</a> |
+    <a href="{% url 'logout' %}">Log out</a> |
+
+</header>    
+
+
+{% block content %}
+
+    <h1> Welcome to UKEME BLOG</h1>
+
+
+    {% if user.is_authenticated %}
+    <p>Hi {{ user.username }}!</p>
+    
+    {% else %}
+    <p>You are not logged in.</p>
+    
+{% endif %}
+
+
+
+    {% endblock content %}
+
